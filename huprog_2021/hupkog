@@ -1,0 +1,180 @@
+aaaaaa
+6
+[2]*[2]*[2]	1+1+1+ kelime(6) = 9
+
+
+aaaaaa   a 
+6		6+1
+
+aaaaaa
+33
+7\6 = 7
+8\6 = 28
+9\6 = 84	3+6
+
+
+[2]*[2]*[2]*[2]*[2]*[2]
+
+
+baataak
+125
+2
+2+1
+3\2 = 3
+
+3
+3+1
+4\2 = 6
+[6]*[]*[]*[]*[]*[]*[]
+
+
+aaaaaa
+9
+[]*[]*[]*[]*[]*[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ilk_satir = list(map(int,input().split()))
+ikinci_satir = list(map(int,input().split()))
+
+ogunSayisi = ilk_satir[0]
+kapSayisi = ilk_satir[1]
+sorguAraligi = ilk_satir[2]
+
+for i in range(ogunSayisi):
+    dizi = list(map(int,input().split()))
+
+    dokulenMama = 1
+    first = dizi[0] -1
+    gram = dizi[1]
+    sorgu = dizi[2] -1
+    total = 0
+    while gram > dokulenMama:
+        ikinci_satir[first] += dokulenMama
+        gram -= dokulenMama
+        first += 1
+        dokulenMama += 1
+        if first > kapSayisi-1:
+            first = 0
+    if gram > 0:
+        ikinci_satir[first] += gram
+    
+    for i in range(sorguAraligi):
+        total += ikinci_satir[sorgu]
+        sorgu += 1
+        if sorgu == kapSayisi:
+            
+            break
+    print(total,end = " ")
+    
+    
+    
+
+
+
+
+
+
+kisi tel dakika
+tel standartlar frekansları
+...
+...
+
+
+
+
+
+
+A = a1 a2 a3 a4 ... an
+B = b1 b2 b3 b4 ... bn
+
+|an-bn| < 20
+
+20-50	+ -	1 TL	B deki herhangi bir sayıya
+
+100	+ -	0 TL	B deki butun sayılara
+
+
+
+
+310 240 171 549
+100 240 171 549
+200 250 10 600
+350 220 150 400
+250 100 150 550
+
+
+A = 320 220 150 600		--> 1290 -> 322
+B = 440 370 250 750		--> 1810 -> 452
+
+  -120 -150 -100 -150	+
+
+|an-bn| < 20
+
+20-50	+ -	1 TL	B deki herhangi bir sayıya
+
+100	+ -	0 TL	B deki butun sayılara
+
+A = 320 220 150 600		--> 1290 -> 322
+B = 100 2000 150 200		--> 2450 -> 612
+   6     -6   6   6
+   220 -1780 0  400
+    2   -17  0   4
+  -400 1500 -350 -300
+   720  1280 500  900
+
+1290 - 2450 = -1160
+-11
+-1000 900 -850 -800	--> 1790
+
+
+A = 320 220 150 600		--> 1290
+B = 100 2000 150 200
+     +    -   -   +		-1160	+
+     2    -2  2   2
+
+
+
+
+A = 500 525 400 300 150
+B = 120 830 360 150 600
++100  1  -1  0   1   -1 = 0
+-100 -1  1   -1  -1   1 = -1
+
+A = 320 220 150 600
+B = 100 2000 150 200
++100 1   -1   -1   1 = 0
+-100 -1    1   -1  -1 = -1
+
+
+A = 320 220 150 600
+B = 440 370 250 750
++100 -1  -1  -1  -1 = -4
+-100  +1 +1  +1  +1 = +4	100 * x
+
+A = 320 220 150 600
+B = 340 270 150 650
++100 -1  -1   -1  -1 = -4
+-100  -1  0    -1  0 = -2
+
+
+
+
+
+
