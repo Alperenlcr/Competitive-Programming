@@ -1,0 +1,147 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <bits/stdc++.h>
+
+using namespace std;
+int main()
+{
+    long long q,z,y,x;
+    cin>>q;
+    for (; q>0; q--)
+    {
+        cin>>x>>y>>z;
+        if(x<y)
+            cout<<z-x;
+        else
+            cout<<z-y;
+        
+    }
+
+    return 0;
+}
+
+
+#include<stdio.h>
+#include<conio.h>
+#define INFINITY 1000000000
+#define MAX 3000
+ 
+void dijkstra(int G[MAX][MAX],int n,int startnode);
+ 
+int main()
+{
+int G[MAX][MAX]={0},i,j,n,u,q,a,b,c,temp;
+//printf("Enter no. of vertices:");     n 
+scanf("%d %d",&n,&q);
+
+//matris olustur
+
+for(i=0;i<q;i++)
+{
+    scanf("%d %d %d",&a,&b,&c);
+    if(b<a)
+    {
+        temp=b;
+        b=a;
+        a=temp;
+    }
+    G[a][b] = c*a;
+}
+u=1; // starting node
+dijkstra(G,n,u);
+return 0;
+}
+ 
+void dijkstra(int G[MAX][MAX],int n,int startnode)
+{
+ 
+int cost[MAX][MAX],distance[MAX],pred[MAX];
+int visited[MAX],count,mindistance,nextnode,i,j;
+//pred[] stores the predecessor of each node
+//count gives the number of nodes seen so far
+//create the cost matrix
+for(i=0;i<n;i++)
+for(j=0;j<n;j++)
+if(G[i][j]==0)
+cost[i][j]=INFINITY;
+else
+cost[i][j]=G[i][j];
+//initialize pred[],distance[] and visited[]
+for(i=0;i<n;i++)
+{
+distance[i]=cost[startnode][i];
+pred[i]=startnode;
+visited[i]=0;
+}
+distance[startnode]=0;
+visited[startnode]=1;
+count=1;
+while(count<n-1)
+{
+mindistance=INFINITY;
+//nextnode gives the node at minimum distance
+for(i=0;i<n;i++)
+if(distance[i]<mindistance&&!visited[i])
+{
+mindistance=distance[i];
+nextnode=i;
+}
+//check if a better path exists through nextnode
+visited[nextnode]=1;
+for(i=0;i<n;i++)
+if(!visited[i])
+if(mindistance+cost[nextnode][i]<distance[i])
+{
+distance[i]=mindistance+cost[nextnode][i];
+pred[i]=nextnode;
+}
+count++;
+}
+ 
+//print the path and distance of each node
+for(i=0;i<n;i++)
+if(i!=startnode)
+{
+printf("\nDistance of node%d=%d",i,distance[i]);
+printf("\nPath=%d",i);
+j=i;
+do
+{
+j=pred[j];
+printf("<-%d",j);
+}while(j!=startnode);
+}
+}
+
+https://www.thecrazyprogrammer.com/2014/03/dijkstra-algorithm-for-finding-shortest-path-of-a-graph.html
+
+
+from itertools import combinations
+count = 0
+inp = list(map(int, input().split()))
+values = [0]
+for i in range(inp[0]-1):
+    temp = int(input())
+    values.append(temp+values[i])
+#print(values)
+#print(list(combinations(range(1,inp[0]+1), inp[2])))
+for i in list(combinations(range(1,inp[0]+1), inp[2])):
+    sum = 0
+    #print()
+    for j in range(inp[2]-1):
+    #    print(i[j+1]-1,i[j]-1)
+        x = values[i[j+1]-1] - values[i[j]-1]
+        if x < 0:
+            x*=-1
+        sum += x
+    #print(sum)
+    if sum % inp[1] == 0:
+        count += 1
+print(count*2)

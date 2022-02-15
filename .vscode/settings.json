@@ -1,0 +1,19 @@
+{
+    "ros.distro": "foxy",
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "initializer_list": "cpp",
+        "valarray": "cpp",
+        "random": "cpp",
+        "span": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "algorithm": "cpp",
+        "*.tcc": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "string_view": "cpp"
+    }
+}
