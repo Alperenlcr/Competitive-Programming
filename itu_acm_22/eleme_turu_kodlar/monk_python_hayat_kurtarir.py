@@ -13,10 +13,10 @@ def main():
         for node in edge:
             findNewCycles([node])
     print(len(cycles))
-    # for cy in cycles:
-    #     path = [str(node) for node in cy]
-    #     s = ",".join(path)
-    #     print(s)
+    for cy in cycles:
+        path = [str(node) for node in cy]
+        s = ",".join(path)
+        print(s)
 
 def findNewCycles(path):
     start_node = path[0]
@@ -59,3 +59,21 @@ def visited(node, path):
     return node in path
 
 main()
+
+"""
+10 13
+1 2
+1 8
+1 6
+2 3
+2 6
+5 0
+5 7
+6 7
+6 5
+7 1
+8 5
+8 0
+9 5
+"""
+

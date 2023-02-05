@@ -1,0 +1,47 @@
+temp = input().split()
+a = int(temp[0])
+b = int(temp[1])
+if pow(a, b) > pow(b, a):
+    print("First")
+elif pow(a, b) < pow(b, a):
+    print("Second")
+else:
+    print("Equal")
+    
+    
+    
+        
+    #     smallest = dizi.index(min(dizi))
+    #     for j in range(3):
+    #         if j != smallest:
+    #             dizi[j] -= dizi[smallest]
+    #     if sum(dizi) == 0:
+    #         break
+    # if dizi[0] == 0 and dizi[1] == 0 and dizi[2] == 0:
+    #     print("Yes")
+    # else:
+    #     print("No")
+    
+    
+    
+    
+t = int(input())
+for i in range(t):
+    dizi = list(map(int, input().split()))
+    dizi = sorted(dizi)
+    if (dizi[0] + dizi[1]) < dizi[2] or sum(dizi) % 2 == 1:
+        print("No")
+    else:
+        print("Yes")
+
+
+t = int(input())
+dizi1 = list(map(int, input().split()))
+dizi2 = list(map(int, input().split()))
+sum = 0
+for j in range(t):
+    d1 = dizi1[j] + dizi2[j] - (dizi1[j] * dizi2[j])
+    d2 = dizi1[j]
+    d3 = dizi2[j]
+    sum += max([d1, d2, d3, 0])
+print(sum)
